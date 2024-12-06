@@ -2,7 +2,6 @@ package com.github.chuddington.tddkata.spending;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -43,6 +42,12 @@ public class Payments {
         );
     }
 
+    /**
+     * Static factory method for creating a {@link Payments} object.
+     * @param payments An {@link Iterable} collection of {@link Payment} objects to wrap around.
+     * @return A new instance of {@link Payments} containing the remaining {@link Payment} objects within the
+     * {@code payments} parameter.
+     */
     public static Payments of(Iterable<Payment> payments) {
         List<Payment> result = new ArrayList<>();
         payments.iterator().forEachRemaining(result::add);
