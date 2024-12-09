@@ -6,9 +6,11 @@ package com.github.chuddington.tddkata.spending;
 public class Payment {
 
     private final int price;
+    private final String description;
 
-    public Payment(int price) {
+    public Payment(int price, String description) {
         this.price = price;
+        this.description = description;
     }
 
     @Override
@@ -23,12 +25,15 @@ public class Payment {
 
         Payment that = (Payment) object;
 
-        return this.price == that.price;
+        return (this.price == that.price) && (this.description.equals(that.description));
     }
 
     @Override
     public String toString() {
         return "Payment[" +
+                "description=\"" +
+                this.description +
+                "\"," +
                 "price=" +
                 this.price +
                 ']';
