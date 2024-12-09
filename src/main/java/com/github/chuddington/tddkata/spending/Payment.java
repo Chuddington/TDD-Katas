@@ -10,4 +10,27 @@ public class Payment {
     public Payment(int price) {
         this.price = price;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+
+        if (object == null || this.getClass() != object.getClass()) {
+            return false;
+        }
+
+        Payment that = (Payment) object;
+
+        return this.price == that.price;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment[" +
+                "price=" +
+                this.price +
+                ']';
+    }
 }
