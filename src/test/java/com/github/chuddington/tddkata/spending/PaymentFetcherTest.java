@@ -2,7 +2,6 @@ package com.github.chuddington.tddkata.spending;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,7 +11,7 @@ public class PaymentFetcherTest {
 
     private final Payments emptyPayments = Payments.of();
     private final Map<Integer, Payments> backingData = Map.ofEntries(
-            Map.entry(1, Payments.of(new Payment()))
+            Map.entry(1, Payments.of(PaymentTest.defaultPayment))
     );
     private final PaymentFetcher fetcher = new PaymentFetcher(backingData);
 
